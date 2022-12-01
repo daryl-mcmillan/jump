@@ -14,6 +14,18 @@
 <script>
 var canvas = document.getElementById("draw");
 var context = canvas.getContext("2d");
+
+function draw(t) {
+  context.clearRect(0,0,canvas.width,canvas.height);
+  context.lineWidth = 1;
+  context.strokeRect(t,10,100,50);
+}
+
+function animate(t) {
+  draw(t);
+  window.requestAnimationFrame(animate);
+};
+window.requestAnimationFrame(animate);
 </script>
 </body>
 </html>
